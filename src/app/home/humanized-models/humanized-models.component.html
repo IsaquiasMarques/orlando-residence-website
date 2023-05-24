@@ -1,0 +1,82 @@
+<div class="section-content flex justify-between flex-col laptop:flex-row gap-16 laptop:gap-20 items-start">
+
+    <div class="left-content overflow-hidden bg-red-3000 flex flex-col items-end pt-0 laptop:pt-32">
+        
+        <div class="content-text mb-10 slide-from-left">
+
+            <div class="tiny-text flex w-fit mb-3 justify-start gap-2 items-center bg-white rounded-full py-1 px-2">
+                <div class="icon">
+                    <img src="assets/svg/icons/typologies/tiny-check.svg" alt="">
+                </div>
+                <div class="text-content">
+                    <h5 class="text-[12px] laptop:text-[13px] font-medium text-[#131418]">
+                        Lazer na medida certa
+                    </h5>
+                </div>
+            </div>
+
+            <div class="section-title laptop:mb-10">
+                <h1 class="text-[28px] laptop:text-[35px] font-bold leading-[38px] laptop:leading-[46px] text-[#131418] laptop:w-[75%]">
+                    Oferecemos recursos de plantas humanizadas T3, T4A & T4B
+                </h1>
+            </div>
+
+        </div>
+
+        <div class="content-image slide-from-left">
+            <!-- <img src="assets/images/humanized-models/model-1.png" alt=""> -->
+
+            <div
+            class="images-list"
+            *ngFor="let image of this.imagesOnSlide"
+            [ngClass]="{'primary': image.primary, 'secondary': !image.primary}"
+            >
+                <div class="img rounded-[4px] laptop:w-[450px] laptop:h-[502px] relative overflow-hidden">
+                    <img src="{{ image.image }}" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="right-content overflow-hidden bg-red-5000 flex flex-col-reverse laptop:flex-col gap-10 laptop:gap-0 items-end">
+
+        <div class="content-image mb-16 slide-from-right">
+            <!-- <img src="assets/images/humanized-models/model-2.png" alt=""> -->
+
+            <div
+            class="images-list"
+            *ngFor="let image of this.imagesOnSlideTwo"
+            [ngClass]="{'primary': image.primary, 'secondary': !image.primary}"
+            >
+                <div class="img rounded-[4px] laptop:w-[450px] laptop:h-[502px] relative overflow-hidden">
+                    <img src="{{ image.image }}" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-text  slide-from-right">
+
+            <div class="tiny-text flex w-fit mb-3 justify-start gap-2 items-center bg-white rounded-full py-1 px-2">
+                <div class="icon">
+                    <img src="assets/svg/icons/typologies/tiny-check.svg" alt="">
+                </div>
+                <div class="text-content">
+                    <h5 class="text-[12px] laptop:text-[13px] font-medium text-[#131418]">
+                        Lazer na medida certa
+                    </h5>
+                </div>
+            </div>
+
+            <div class="section-title">
+                <h1 class="text-[28px] laptop:text-[35px] font-bold leading-[38px] laptop:leading-[46px] text-[#131418] laptop:w-[70%]">
+                    Escolha a sua tipologia através de nosso modelos humanizados
+                </h1>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>

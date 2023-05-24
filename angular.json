@@ -94,8 +94,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "orlando-residence-website:build:production",
+            "firebaseProject": "orlando-residence",
+            "firebaseHostingSite": "orlando-residence"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c1bd7cce-54aa-48b5-94d3-d77eded7f01b"
   }
 }

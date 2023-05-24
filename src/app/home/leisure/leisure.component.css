@@ -1,0 +1,31 @@
+.line .line--view{
+    background-color: #c4c4c4;
+    height: 2px;
+    position: relative;
+    overflow: hidden;
+}
+.line .line--view div.active-color{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.image .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.images-list{
+    transition: .6s;
+}
+.images-list.primary{
+    z-index: 2;
+    opacity: 1;
+}
+.images-list.secondary{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}

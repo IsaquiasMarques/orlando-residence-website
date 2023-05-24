@@ -1,0 +1,22 @@
+header{
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+}
+header nav ul{}
+header nav ul li{}
+header nav ul li a{
+    font-weight: 500;
+    transition: .3s;
+}
+header nav ul li a:hover{
+    color: var(--secondary-color);
+}
+.menu-mobile{
+    transition: .8s;
+}
+.menu-mobile.appear{
+    top: 0;
+}
+
+.menu-mobile.disappear{
+    top: -150%;
+}

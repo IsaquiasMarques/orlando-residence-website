@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  send_email_api: 'http://localhost/api_send_email_orlando-residencial/'
 };
 
 /*

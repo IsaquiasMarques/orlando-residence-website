@@ -1,0 +1,247 @@
+<section
+class="form-cover z-[5]"
+[ngClass]="{'showModal': (this.nav.showModalScheduleVisit | async), 'hideModal': !(this.nav.showModalScheduleVisit | async)}"
+>
+    <div class="section-contain mt-24 laptop:mt-[100px] laptop:my-20 w-[90%] laptop:w-[85%] mx-auto max-w-[1536px]">
+        <div class="section-header flex justify-start">
+            <a
+            href="javascript:void(0)"
+            (click)="goOneStepBback()"
+            >
+                <img src="assets/svg/icons/back-arrow-form-cover.svg" class="w-[40px] laptop:w-auto" alt="">
+            </a>
+        </div>
+
+        <div class="section-body flex justify-center items-center mt-8 bg-red-20">
+            <div class="forms overflow-hidden relative">
+                <form
+                [formGroup]="this.formGroup"
+                (submit)="this.submitForm()"
+                >
+                    <div
+                    class="user-full-name-form-panel bg-green-20"
+                    [ngClass]="{'ative': userFullNamePanel, 'inactive': !userFullNamePanel}"
+                    >
+                        <div class="panel-title">
+                            <h1 class="text-[22px] laptop:text-[28px] font-bold">
+                                Digite seus dados
+                            </h1>
+                        </div>
+                        <div class="panel-form mt-10">
+                            <div class="user-input">
+                                <div class="label mb-2 text-[14px] text-[#131418] text-opacity-[70%]">
+                                    <label for="">Nome Completo</label>
+                                </div>
+                                <div class="input-form flex gap-0 laptop:gap-2 justify-between items-center">
+                                    <div class="icon w-5">
+                                        <img src="assets/svg/icons/forms/user.svg" alt="">
+                                    </div>
+                                    <div class="input">
+                                        <input type="text" formControlName="fullname" placeholder="Orlando Residencial">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-submit mt-10">
+                                <button
+                                type="button"
+                                (click)="this.continue()"
+                                id="submit-button-schedule"
+                                [disabled]="this.formGroup.get('fullname').invalid"
+                                class="bg-secondary w-full p-3 text-white rounded-[4px] flex justify-center gap-4 items-center laptop:font-semibold"
+                                >
+                                    Continuar
+                                    <img src="assets/svg/icons/forms/arrow-right.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                    class="user-contact-form-panel bg-green-20"
+                    [ngClass]="{'ative': userContactPanel, 'inactive': !userContactPanel}"
+                    >
+                        <div class="panel-title">
+                            <h1 class="text-[22px] laptop:text-[28px] font-bold">
+                                Digite seus contactos
+                            </h1>
+                        </div>
+                        <div class="panel-form mt-7 laptop:mt-10">
+
+                            <div class="user-input mb-2">
+                                <div class="label mb-2 text-[14px] text-[#131418] text-opacity-[70%]">
+                                    <label for="">Número de telefone</label>
+                                </div>
+                                <div class="input-form flex gap-0 laptop:gap-2 justify-start items-center">
+                                    <div class="icon w-5">
+                                        <img src="assets/svg/icons/forms/contact.svg" alt="">
+                                    </div>
+                                    <div class="input">
+                                        <input type="text" formControlName="contact" placeholder="000000000" maxlength="13" minlength="9">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-input mb-2">
+                                <div class="label mb-2 text-[14px] text-[#131418] text-opacity-[70%]">
+                                    <label for="">Email</label>
+                                </div>
+                                <div class="input-form flex gap-0 laptop:gap-2 justify-start items-center">
+                                    <div class="icon w-5">
+                                        <img src="assets/svg/icons/forms/email.svg" alt="">
+                                    </div>
+                                    <div class="input">
+                                        <input type="email" formControlName="email" placeholder="example@email.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-input">
+                                <div class="label mb-2 text-[14px] text-[#131418] text-opacity-[70%]">
+                                    <label for="">Mensagem</label>
+                                </div>
+                                <div class="input-form flex gap-0 justify-start items-start">
+                                    <div class="input">
+                                        <textarea formControlName="message" id="" cols="30" rows="3" placeholder="Escreva aqui a sua mensagem"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-submit mt-5">
+                                <button
+                                id="submit-button-schedule"
+                                type="submit"
+                                [disabled]="this.formGroup.invalid"
+                                class="bg-secondary w-full p-3 text-white rounded-[4px] laptop:font-semibold"
+                                >
+                                    <div
+                                    class="description flex justify-center gap-4 items-center"
+                                    *ngIf="!this.isSendEmailLoading"
+                                    
+                                    >
+                                        Enviar
+                                        <img src="assets/svg/icons/forms/arrow-right.svg" alt="">
+                                    </div>
+                                    <div
+                                    class="is-loading flex justify-center items-center transition-all"
+                                    *ngIf="this.isSendEmailLoading"
+                                    >
+                                        <img src="assets/svg/icons/forms/rolling-loading.svg" width="25px" alt="">
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                    class="user-contact-form-panel bg-green-20"
+                    [ngClass]="{'ative': this.messageSentPanel, 'inactive': !this.messageSentPanel}"
+                    >
+                        <div class="was-sent" *ngIf="this.wasEmailSent">
+                            <div class="panel-img mt-3">
+                                <img src="assets/svg/icons/forms/sucessfull.svg" alt="">
+                            </div>
+                            <div class="panel-title my-10">
+                                <h1 class="text-[28px] leading-[40px] font-semibold">
+                                    Visita agendada com sucesso!
+                                </h1>
+                            </div>
+                            <div class="description my-10">
+                                <p class="text-[16px] leading-[24px]">
+                                    Nossa equipa está analisando seus dados,<br> entraremos em contacto em breve. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="wasnt-sent" *ngIf="!this.wasEmailSent">
+                            <div class="panel-img mt-3">
+                                <img src="assets/svg/icons/forms/error.svg" alt="">
+                            </div>
+                            <div class="panel-title my-10">
+                                <h1 class="text-[28px] leading-[40px] font-semibold">
+                                    Erro ao agendar a visita
+                                </h1>
+                            </div>
+                            <div class="description my-10">
+                                <p class="text-[16px] leading-[24px] text-red-500">
+                                    {{ this.emailSentStatusLabel }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="panel-form mt-7 laptop:mt-10">
+                            <div class="button">
+                                <button
+                                class="bg-[#00C556] w-full text-white p-3 mb-5 laptop:p-4 rounded-[4px] flex justify-center items-center gap-3"
+                                (click)="this.openWhatsapp('+244913588888', 'Olá, desejo fazer um agendamento para uma visita')"
+                                *ngIf="!this.wasEmailSent"
+                                >
+                                  <div class="contact text-[14px] laptop:text-[15px]">
+                                    Agendar pelo whatsapp
+                                  </div>
+                                  <!-- <div class="icon">
+                                    <img src="assets/svg/icons/footer/arrow-btn.svg" alt="">
+                                  </div> -->
+                                </button>
+                            </div>
+                            <div class="input-submit">
+                                <button
+                                type="button"
+                                (click)="this.goOneStepBback()"
+                                id="submit-button-schedule"
+                                class="bg-secondary w-full p-3 text-white rounded-[4px] flex justify-center gap-4 items-center laptop:font-semibold"
+                                >
+                                    <img src="assets/svg/icons/forms/arrow-left.svg" alt="">
+                                    {{ this.formLabelMessage }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="banner mt-24 laptop:mt-0" id="banner">
+    <app-banner class="hidden laptop:block"></app-banner>
+    <app-banner-mobile class="laptop:hidden"></app-banner-mobile>
+</section>
+
+<section class="about" id="about">
+    <div class="about-contain my-16 laptop:my-20 w-[90%] laptop:w-[85%] mx-auto max-w-[1536px]">
+        <app-about></app-about>
+    </div>
+</section>
+
+<section class="implantation" id="implantation">
+    <div class="implantation-contain mt-20 laptop:mt-32 laptop:my-20 w-[90%] laptop:w-[85%] mx-auto max-w-[1536px]">
+        <app-implantation></app-implantation>
+    </div>
+</section>
+
+<section class="typologies" id="typologies">
+    <div class="typologies-contain mt-20 laptop:mt-32 laptop:my-20 w-[90%] laptop:w-[100%] laptop:pl-32 mx-auto max-w-[1536px]">
+        <app-typologies class="hidden laptop:block"></app-typologies>
+        <app-typologies-mobile class="laptop:hidden"></app-typologies-mobile>
+    </div>
+</section>
+
+<section class="leisure bg-[#131418]" id="leisure">
+    <div class="leisure-contain py-20 my-20 laptop:mt-32 laptop:my-20 w-[90%] laptop:w-[70%] mx-auto max-w-[1536px]">
+        <app-leisure></app-leisure>
+    </div>
+</section>
+
+<section class="gallery" id="gallery">
+    <div class="gallery-contain py-10 laptop:mt-32 laptop:my-20 laptop:w-[85%] mx-auto max-w-[1536px]">
+        <app-gallery></app-gallery>
+    </div>
+</section>
+
+<section class="humanized-models" id="humanized-models">
+    <div class="models-contain laptop:py-10 laptop:mt-24 laptop:my-20 w-[90%] laptop:w-[80%] mx-auto max-w-[1536px]">
+        <app-humanized-models></app-humanized-models>
+    </div>
+</section>
+
+<section class="newsletter" id="newsletter">
+    <div class="newsletter-contain py-10 laptop:mt-24 laptop:my-20 laptop:w-[85%] mx-auto max-w-[1536px]">
+        <app-newsletter></app-newsletter>
+    </div>
+</section>

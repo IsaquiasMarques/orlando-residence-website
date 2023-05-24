@@ -1,0 +1,75 @@
+.form-cover{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background-color: #fff;
+    transition: .6s;
+}
+.form-cover.showModal{
+    top: 0% !important;
+}
+.form-cover.hideModal{
+    top: -150% !important;
+}
+.user-input .input-form{
+    /* border: 2px solid rgba(255, 255, 255, 50%); */
+    border-radius: 4px;
+    padding: 0px 20px;
+}
+.user-input .input-form{
+    background-color: #F0F0F0;
+    border-radius: 4px;
+}
+.user-input .input input,
+.user-input .input textarea
+{
+    background-color: transparent;
+    padding: 10px;
+}
+.user-input .input textarea:focus{
+    outline: none;
+}
+
+#submit-button-schedule:disabled{
+    opacity: 50%;
+    cursor: auto;
+}
+
+.user-input .input input,
+.user-input .input input::placeholder
+.user-input .input textarea,
+.user-input .input textarea::placeholder
+{
+    color: rgba(19, 20, 24, 60%);
+}
+.user-input .input input:focus{
+    outline: none;
+}
+.user-input .input textarea{
+    resize: none;
+}
+
+.user-full-name-form-panel.active,
+.user-contact-form-panel.active{
+    transition: .4s;
+}
+
+.user-full-name-form-panel.active,
+.user-contact-form-panel.active{
+    display: block;
+    animation: fadeIn forwards ease-in-out .4s !important;
+}
+.user-full-name-form-panel.inactive,
+.user-contact-form-panel.inactive{
+    display: none;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

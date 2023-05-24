@@ -1,0 +1,17 @@
+.email-input{
+    border: 2px solid rgba(255, 255, 255, 50%);
+    border-radius: 4px;
+    padding: 0px 20px;
+}
+.email-input .input{}
+.email-input .input input{
+    background-color: transparent;
+    color: rgba(255, 255, 255, 70%);
+    padding: 10px;
+}
+.email-input .input input::placeholder{
+    color: rgba(255, 255, 255, 70%);
+}
+.email-input .input input:focus{
+    outline: none;
+}

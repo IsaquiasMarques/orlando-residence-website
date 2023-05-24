@@ -1,0 +1,145 @@
+<div class="section-content flex justify-between flex-col laptop:flex-row gap-10">
+
+    <div class="content laptop:w-[40%]">
+        <div class="tiny-text flex w-fit mb-5 justify-start gap-2 items-center bg-white rounded-full py-1 px-2">
+            <div class="icon">
+                <img src="assets/svg/icons/typologies/tiny-check.svg" alt="">
+            </div>
+            <div class="text-content">
+                <h5 class="text-[12px] laptop:text-[13px] font-medium text-[#131418]">
+                    Lazer na medida certa
+                </h5>
+            </div>
+        </div>
+        <div class="section-title">
+            <h1 class="text-[30px] laptop:text-[40px] font-bold leading-[36px] laptop:leading-[46px] text-white">
+                Os momentos mais inesquecíveis em ambientes seguros
+            </h1>
+        </div>
+        <div class="section-description mt-5">
+            <p class="w-full laptop:w-[85%] text-[15px] laptop:text-[16px] text-white opacity-[50%]">
+                Oferece aos seus moradores uma ampla zona de lazer, que contará com
+                diversas opções para proporcionar à sua família inesquecíveis
+                momentos.
+            </p>
+        </div>
+
+        <div class="bottom-list mt-10 w-full laptop:w-[90%]">
+            <div class="list-items flex justify-between gap-y-5">
+
+                <div class="first-column flex flex-col gap-4">
+
+                    <div class="item flex gap-3 items-center">
+                        <div class="icon">
+                            <img src="assets/svg/icons/implantation/check.svg" width="18px" alt="">
+                        </div>
+                        <div class="description">
+                            <p class="text-[#fff] opacity-[50%] text-[13px] laptop:text-[14px]">
+                                Restaurantes
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="item flex gap-3 items-center">
+                        <div class="icon">
+                            <img src="assets/svg/icons/implantation/check.svg" width="18px" alt="">
+                        </div>
+                        <div class="description">
+                            <p class="text-[#fff] opacity-[50%] text-[13px] laptop:text-[14px]">
+                                Bar e Piscina
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="item flex gap-3 items-center">
+                        <div class="icon">
+                            <img src="assets/svg/icons/implantation/check.svg" width="18px" alt="">
+                        </div>
+                        <div class="description">
+                            <p class="text-[#fff] opacity-[50%] text-[13px] laptop:text-[14px]">
+                                Parque Infantil
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="item flex gap-3 items-center">
+                        <div class="icon">
+                            <img src="assets/svg/icons/implantation/check.svg" width="18px" alt="">
+                        </div>
+                        <div class="description">
+                            <p class="text-[#fff] opacity-[50%] text-[13px] laptop:text-[14px]">
+                                Ginásio
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="second-column flex flex-col gap-4">
+
+                    <div class="item flex gap-3 items-center">
+                        <div class="icon">
+                            <img src="assets/svg/icons/implantation/check.svg" width="18px" alt="">
+                        </div>
+                        <div class="description">
+                            <p class="text-[#fff] opacity-[50%] text-[13px] laptop:text-[14px]">
+                                Quadra Multiuso
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="item flex gap-3 items-center">
+                        <div class="icon">
+                            <img src="assets/svg/icons/implantation/check.svg" width="18px" alt="">
+                        </div>
+                        <div class="description">
+                            <p class="text-[#fff] opacity-[50%] text-[13px] laptop:text-[14px]">
+                                Área de lazer para idosos
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="item flex gap-3 items-center">
+                        <div class="icon">
+                            <img src="assets/svg/icons/implantation/check.svg" width="18px" alt="">
+                        </div>
+                        <div class="description">
+                            <p class="text-[#fff] opacity-[50%] text-[13px] laptop:text-[14px]">
+                                Lojas Comercias
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="image relative">
+        
+        <div
+        class="images-list w-full"
+        *ngFor="let image of this.imagesOnSlide"
+        [ngClass]="{'primary': image.primary, 'secondary': !image.primary}"
+        >
+            <div class="img w-full laptop:w-[450px] h-[230px] laptop:h-[500px] rounded-[4px] overflow-hidden">
+                <img src="{{ image.image }}" alt="">
+            </div>
+            <div class="bottom-content mt-4 flex flex-col laptop:flex-row laptop:justify-between laptop:items-center gap-3 laptop:gap-0">
+                <div class="content laptop:w-[30%]">
+                    <p class="text-[13px] laptop:text-[15px] text-white">
+                        <i>{{ image.title }}</i>
+                    </p>
+                </div>
+                <div class="line laptop:w-[65%]">
+                    <div class="line--view">
+                        <div class="active-color w-[25%] bg-secondary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
