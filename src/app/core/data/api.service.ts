@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { InMemoryDataService } from './api/in-memory-data.service';
 import { CATEGORIES } from './api/mock/mock-categories';
 import { GALLERY } from './api/mock/mock-gallery';
 
@@ -13,7 +12,6 @@ export class ApiService {
 
   constructor(
     private http: HttpClient,
-    private mock: InMemoryDataService
   ) { }
 
   imagesOnSlide_banner_home: any[] = [
@@ -38,17 +36,11 @@ export class ApiService {
   ];
 
   get_gallery_categories(): Observable<any[]>{
-    // return this.http.get('api/gallery_categories');
-    // return this.mock.mock_categories_gallery;
-
     const categories = of(CATEGORIES);
     return categories;
   }
 
   get_gallery(){
-    // return this.http.get('api/gallery');
-    // return this.mock.mock_gallery;
-
     const gallery = of(GALLERY);
     return gallery;
   }
