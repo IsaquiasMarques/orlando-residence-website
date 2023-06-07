@@ -51,7 +51,7 @@ class="images-gallery mt-20 laptop:mt-32"
     [ngClass]="{'laptop:justify-center': this.displayGallery.length > 2 && (this.displayGallery.length % 3) == 0, 'laptop:justify-start':this.displayGallery.length < 3 || (this.displayGallery.length % 3) == 0, 'laptop:w-fit': this.displayGallery.length >= 3 }"
     >
         <div
-        class="box-img gallery laptop:w-[380px] laptop:-[380px]"
+        class="box-img gallery w-full h-[300px] laptop:w-[380px] laptop:h-[380px]"
         *ngFor="let gallery of this.displayGallery"
         >
             <img src="{{ this.gallery.image }}" alt="{{ this.gallery.title }}">

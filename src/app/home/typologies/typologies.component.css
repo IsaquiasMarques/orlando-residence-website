@@ -17,6 +17,10 @@
     object-fit: cover;
 }
 
+.section-content.typology{
+    transition: 1s !important;
+}
+
 .box .image .details-content{
     position: absolute;
     left: 0;

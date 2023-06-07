@@ -14,13 +14,13 @@ export class HumanizedModelsComponent implements OnInit {
     {
       id: 2,
       title: 'Modelo humanizado 1',
-      image: 'assets/images/humanized-models/model-1.png',
+      image: 'assets/images/humanized-models/model-1.jpg',
       primary: true,
     },
     {
       id: 3,
       title: 'Modelo humanizado 2',
-      image: 'assets/images/humanized-models/model-2.png',
+      image: 'assets/images/humanized-models/model-2.jpg',
       primary: false,
     },
   ];
@@ -29,13 +29,13 @@ export class HumanizedModelsComponent implements OnInit {
     {
       id: 2,
       title: 'Modelo humanizado 1',
-      image: 'assets/images/humanized-models/model-3.png',
+      image: 'assets/images/humanized-models/model-3.jpg',
       primary: true,
     },
     {
       id: 3,
       title: 'Modelo humanizado 2',
-      image: 'assets/images/humanized-models/model-4.png',
+      image: 'assets/images/humanized-models/model-4.jpg',
       primary: false,
     },
   ];

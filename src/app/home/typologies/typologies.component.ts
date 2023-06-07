@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-typologies',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TypologiesComponent implements OnInit {
 
+  isOnLeft: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  isOnRight: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  interval: any;
+  boxes: any;
+  IntervalNumber: number = 3;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.boxes = document.querySelector('.section-content.typology') as HTMLElement;
+
+    this.setInterval(this.IntervalNumber, this.boxes);
+
   }
 
   showDetailsFirstTypology: boolean = false;
@@ -45,6 +58,33 @@ export class TypologiesComponent implements OnInit {
     }else{
       this.detailsThirdDescription = 'Ver detalhes';
     }
+  }
+
+  setInterval(interval: number, boxes: any){
+    this.interval = setInterval(() => {
+
+      if(this.isOnLeft.getValue()){
+        boxes.scrollTo(boxes.scrollHeight, 0);
+        this.isOnLeft.next(false);
+        this.isOnRight.next(true);
+        return;
+      }
+
+      if(this.isOnRight.getValue()){
+        boxes.scrollTo(0, 0);
+        this.isOnLeft.next(true);
+        this.isOnRight.next(false);
+        return;
+      }
+
+    }, interval * 1000);
+  }
+
+  stopInterval(){
+    clearInterval(this.interval);
+  }
+  continueInterval(){
+    this.setInterval(this.IntervalNumber, this.boxes);
   }
 
 }
