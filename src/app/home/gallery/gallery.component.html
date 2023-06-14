@@ -5,11 +5,11 @@
 </div>
 
 <div class="categories-nav my-10 w-[70%] mx-auto">
-    <div class="navigation">
-        <ul class="flex justify- flex-col laptop:flex-row gap-2 laptop:gap-0 items-center bg-[#F0F0F0] rounded-[4px] py-4 px-2">
+    <div class="navigation bg-yellow-200">
+        <ul class="flex justify-around flex-col laptop:flex-row gap-2 laptop:gap-0 items-center bg-[#F0F0F0] rounded-[4px] py-4 px-2">
 
             <div
-            class="item flex w-full justify-around items-center gap-0"
+            class="item flex w-fit justify-around items-center gap-0"
             >
                 <li>
                     <a
@@ -18,23 +18,24 @@
                     (click)="this.get_gallery_by_category('all')"
                     >Todas</a>
                 </li>
-                <span class="text-[9px] hidden laptop:block">&#9679;</span>
+                <!-- <span class="text-[9px] hidden laptop:block">&#9679;</span> -->
             </div>
 
             <div
-            class="item flex w-full justify-around items-center gap-0"
+            class="item bg-slate-4000 flex w-fit justify-around items-center gap-0"
             *ngFor="let category of this.gallery_categories"
             >
                 
-                <li>
+                <li class="">
                     <a
                     href="javascript:void(0)"
+                    class="bg-red-3000"
                     [ngClass]="{'active': category.active}"
                     (click)="this.get_gallery_by_category(category.name)"
                     >{{ category.name }}</a>
                 </li>
 
-                <span class="text-[9px] hidden laptop:block">&#9679;</span>
+                <!-- <span class="text-[9px] hidden laptop:block">&#9679;</span> -->
             </div>
 
         </ul>
