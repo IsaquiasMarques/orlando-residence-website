@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ApiService } from 'src/app/core/data/api.service';
 import { LinkService } from 'src/app/shared/services/links/link.service';
 
@@ -14,7 +15,8 @@ export class BannerComponent implements OnInit {
 
   constructor(
     private link: LinkService,
-    private api: ApiService
+    private api: ApiService,
+    @Inject(PLATFORM_ID) private platfformId: any
   ) { }
   
   imagesOnSlide!: any[];
@@ -25,20 +27,22 @@ export class BannerComponent implements OnInit {
   }
 
   refreshSlideOrder(){
-    setInterval(() => {
-      
-      let primaryImageIndex = this.imagesOnSlide.findIndex(el => el.primary === true);  
-      this.imagesOnSlide[primaryImageIndex].primary = false;
-
-      if(primaryImageIndex == (this.imagesOnSlide.length - 1)){
-        this.imagesOnSlide[0].primary = true;
+    if(isPlatformBrowser(this.platfformId)){
+      setInterval(() => {
         
-        return;
-      }
-      
-      this.imagesOnSlide[primaryImageIndex + 1].primary = true;
-
-    }, this.counter);
+        let primaryImageIndex = this.imagesOnSlide.findIndex(el => el.primary === true);  
+        this.imagesOnSlide[primaryImageIndex].primary = false;
+  
+        if(primaryImageIndex == (this.imagesOnSlide.length - 1)){
+          this.imagesOnSlide[0].primary = true;
+          
+          return;
+        }
+        
+        this.imagesOnSlide[primaryImageIndex + 1].primary = true;
+  
+      }, this.counter);
+    }
   }
 
   get_in_touch(number: string){

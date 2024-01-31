@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/core/data/api.service';
 
@@ -21,7 +22,8 @@ export class NewsletterComponent implements OnInit {
   isSendEmailLoading: boolean = false;
 
   constructor(
-    private api: ApiService
+    private api: ApiService,
+    @Inject(PLATFORM_ID) private platformId: any
   ) { }
 
   ngOnInit(): void {
@@ -72,9 +74,11 @@ export class NewsletterComponent implements OnInit {
   }
 
   resetEmailSentStatusLabel(timer: number){
-    setTimeout(() => {
-      this.emailSentStatusLabel = '';
-    }, timer * 1000);
+    if(isPlatformBrowser(this.platformId)){
+      setTimeout(() => {
+        this.emailSentStatusLabel = '';
+      }, timer * 1000);
+    }
   }
 
 }

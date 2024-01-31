@@ -46,11 +46,12 @@ export class HumanizedModelsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.start();
+    if(isPlatformBrowser(this.platformId)){
+      this.start();
+    }
   }
 
   start(){
-
     let slideTimer = setInterval(() => {
       
       let counter = 1;

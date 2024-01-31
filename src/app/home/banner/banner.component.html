@@ -6,12 +6,13 @@
         [ngClass]="{'primary': image.primary, 'secondary': !image.primary}"
         >
             <img
+            class="w-full h-full object-cover object-center"
             src="{{ image.image }}"
             alt="{{ image.title }}"
             >
         </div>
     </div>
-    <div class="banner-content-contain absolute mx-auto w-[80%] max-w-[1536px]">
+    <div class="banner-content-contain absolute mx-auto w-[80%]">
         <div class="banner--content-panel laptop:w-[395px] laptop:h-[550px] bg-white p-10 rounded-[4px]">
             <div class="content-panel">
                 <div class="panel-title">

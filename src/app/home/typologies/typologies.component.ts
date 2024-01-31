@@ -66,30 +66,29 @@ export class TypologiesComponent implements OnInit {
   }
 
   setInterval(interval: number, boxes: any){
-    this.interval = setInterval(() => {
+    if(isPlatformBrowser(this.platformId)){
+      this.interval = setInterval(() => {
 
-      if(this.isOnLeft.getValue()){
-        
-        if(isPlatformBrowser(this.platformId)){
+        if(this.isOnLeft.getValue()){
+          
           boxes.scrollTo(boxes.scrollHeight, 0);
+
+          this.isOnLeft.next(false);
+          this.isOnRight.next(true);
+          return;
         }
 
-        this.isOnLeft.next(false);
-        this.isOnRight.next(true);
-        return;
-      }
-
-      if(this.isOnRight.getValue()){
-        
-        if(isPlatformBrowser(this.platformId)){
+        if(this.isOnRight.getValue()){
+          
           boxes.scrollTo(0, 0);
+          
+          this.isOnLeft.next(true);
+          this.isOnRight.next(false);
+          return;
         }
-        this.isOnLeft.next(true);
-        this.isOnRight.next(false);
-        return;
-      }
 
-    }, interval * 1000);
+      }, interval * 1000);
+    }
   }
 
   stopInterval(){

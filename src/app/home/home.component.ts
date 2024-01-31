@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { NavService } from '../shared/services/navigation/nav.service';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LinkService } from '../shared/services/links/link.service';
 import { ApiService } from '../core/data/api.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +29,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private api: ApiService,
     public nav: NavService,
-    private link: LinkService
+    private link: LinkService,
+    @Inject(PLATFORM_ID) private platformId: any
   ) { }
 
   ngOnInit(): void {
@@ -152,9 +154,11 @@ export class HomeComponent implements OnInit {
   }
 
   resetEmailSentStatusLabel(timer: number){
-    setTimeout(() => {
-      this.emailSentStatusLabel = '';
-    }, timer * 1000);
+    if(isPlatformBrowser(this.platformId)){
+      setTimeout(() => {
+        this.emailSentStatusLabel = '';
+      }, timer * 1000);
+    }
   }
 
   openWhatsapp(number: string, body: string){

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-leisure',
@@ -34,10 +35,14 @@ export class LeisureComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any
+  ) { }
 
   ngOnInit(): void {
-    this.start();
+    if(isPlatformBrowser(this.platformId)){
+      this.start();
+    }
   }
 
   start(){
