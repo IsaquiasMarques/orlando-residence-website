@@ -1,0 +1,46 @@
+<div class="banner--image relative laptop:h-[749px] laptop:w-full overflow-hidden">
+    <div class="slide">
+        <div
+        class="images-list"
+        *ngFor="let image of this.imagesOnSlide"
+        [ngClass]="{'primary': image.primary, 'secondary': !image.primary}"
+        >
+            <img
+            src="{{ image.image }}"
+            alt="{{ image.title }}"
+            >
+        </div>
+    </div>
+    <div class="banner-content-contain absolute mx-auto w-[80%] max-w-[1536px]">
+        <div class="banner--content-panel laptop:w-[395px] laptop:h-[550px] bg-white p-10 rounded-[4px]">
+            <div class="content-panel">
+                <div class="panel-title">
+                    <h1 class="laptop:text-[48px] laptop:font-bold laptop:leading-[56px]">
+                        Realize agora o sonho da casa própria!
+                    </h1>
+                </div>
+                <div class="panel-description my-10">
+                    <p class="text-[#131418] laptop:text-[16px]">
+                        Temos os melhores imóveis com as melhores condições do mercado para você
+                    </p>
+                </div>
+                <div class="panel-footer">
+                    <div class="buttons">
+                        <div class="schedule-visit-btn">
+                            <app-schedule-visit></app-schedule-visit>
+                        </div>
+                        <div class="get-in-touch-btn mt-4">
+                            <button
+                            class="bg-white w-full p-3 text-[#131418] rounded-[4px] flex justify-center gap-4 items-center laptop:font-semibold"
+                            (click)="this.get_in_touch('tel:923267333')"
+                            >
+                                Entrar em contacto
+                                <img src="assets/svg/icons/banner/get-in-touch-icon.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

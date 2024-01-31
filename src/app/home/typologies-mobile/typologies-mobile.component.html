@@ -1,0 +1,455 @@
+<div class="section-content w-full p-1">
+
+    <div class="content-box w-full bg-white">
+
+        <div class="tiny-text flex justify-start gap-2 items-center">
+            <div class="icon">
+                <img src="assets/svg/icons/typologies/tiny-check.svg" alt="">
+            </div>
+            <div class="text-content">
+                <h5 class="text-[14px] font-medium text-[#131418]">
+                    A sua jornada começa aqui
+                </h5>
+            </div>
+        </div>
+
+        <div class="section-title my-5">
+            <h1 class="text-[#131418] text-[30px] font-bold leading-[36px]">
+                Tipologias de moradias
+            </h1>
+        </div>
+
+        <div class="section-description mb-12 laptop:w-[75%]">
+            <p class="laptop:text-[16px] text-[#131418] mb-5">
+                As moradias do Orlando Residencial dispõem de terrenos entre os
+                240 e os 320 m².
+            </p>
+
+            <p class="laptop:text-[16px] text-[#131418]">
+                Agende a sua visita, venha tomar um café connosco e conheça as
+                infra-estruturas 
+            </p>
+
+        </div>
+
+        <div class="section-footer">
+            <div class="schedule-visit-btn laptop:w-[75%]">
+                <app-schedule-visit></app-schedule-visit>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="slider relative flex flex-col gap-5 mt-10 w-full overflow-x-auto">
+
+        <div class="boxes relative flex gap-5 w-fit p-0">
+
+            <div class="box w-[290px]">
+                <div class="image h-[310px]">
+                    
+                    <div
+                    class="view-details z-[2] not-show-details"
+                    [ngClass]="{'show-details': this.showDetailsFirstTypology, 'not-show-details': !this.showDetailsFirstTypology}"
+                    >
+                        <div class="view-header flex justify-end p-5">
+                            <a
+                            href="javascript:void(0)"
+                            (click)="this.toggleFirstTypology()"
+                            >
+                                <img src="assets/svg/icons/mobile/close-menu.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="view-specifications p-5 flex flex-col gap-1 text-[13px]">
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Lote: 240 m2</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Área de construção: 149.25 m2</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>2 Quartos</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>1 Suite</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>2 Casas de banho</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Sala comum</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Cozinha</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Amplo Terraço</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Varandas</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- <div class="details-content flex justify-center items-center text-white">
+                        <a
+                        href="javascript:void(0)"
+                        (click)="this.toggleFirstTypology()"
+                        >
+                            <p class="flex gap-3">
+                                Ver detalhes
+                                <img src="assets/svg/icons/typologies/see-details-arrow.svg" alt="">
+                            </p>
+                        </a>
+                    </div> -->
+                    
+                    <img src="assets/images/typologies/t3.jpg" alt="">
+                </div>
+                <div class="bottom-content mt-4 flex justify-between items-center">
+                    <div class="text-description">
+                        <p class="laptop:text-[16px] text-[#131418] uppercase font-semibold">
+                            Tipologia T3
+                        </p>
+                    </div>
+                    <div class="details-content flex justify-center items-center text-white">
+                        <a
+                        href="javascript:void(0)"
+                        (click)="this.toggleFirstTypology()"
+                        >
+                            <p class="flex gap-3 text-[14px] text-secondary font-semibold">
+                                {{ this.detailsFirstDescription }}
+                                <img src="assets/svg/icons/typologies/see-details-arrow.svg" width="15px" alt="">
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="box w-[290px]">
+                <div class="image h-[310px]">
+                    
+                    <div
+                    class="view-details z-[2] not-show-details"
+                    [ngClass]="{'show-details': this.showDetailsSecondTypology, 'not-show-details': !this.showDetailsSecondTypology}"
+                    >
+                        <div class="view-header flex justify-end p-5">
+                            <a
+                            href="javascript:void(0)"
+                            (click)="this.toggleSecondTypology()"
+                            >
+                                <img src="assets/svg/icons/mobile/close-menu.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="view-specifications p-5 flex flex-col gap-1 text-[13px]">
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Lote: 320 m2</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Área de construção: 164.90 m2</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>3 Quartos</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>1 Suite</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>2 Casas de banho</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Sala comum</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Cozinha</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Amplo Terraço</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Varandas</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- <div class="details-content flex justify-center items-center text-white">
+                        <a
+                        href="javascript:void(0)"
+                        (click)="this.toggleSecondTypology()"
+                        >
+                            <p class="flex gap-3">
+                                Ver detalhes
+                                <img src="assets/svg/icons/typologies/see-details-arrow.svg" alt="">
+                            </p>
+                        </a>
+                    </div> -->
+
+                    <img src="assets/images/typologies/t4a.jpg" alt="">
+                </div>
+                <div class="bottom-content mt-4 flex justify-between items-center">
+                    <div class="text-description">
+                        <p class="laptop:text-[16px] text-[#131418] uppercase font-semibold">
+                            Tipologia T4A
+                        </p>
+                    </div>
+                    <div class="details-content flex justify-center items-center text-white">
+                        <a
+                        href="javascript:void(0)"
+                        (click)="this.toggleSecondTypology()"
+                        >
+                            <p class="flex gap-3 text-[14px] text-secondary font-semibold">
+                                {{ this.detailsSecondDescription }}
+                                <img src="assets/svg/icons/typologies/see-details-arrow.svg" width="15px" alt="">
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="box w-[290px]">
+                <div class="image h-[310px]">
+                    
+                    <div
+                    class="view-details z-[2] not-show-details"
+                    [ngClass]="{'show-details': this.showDetailsThirdTypology, 'not-show-details': !this.showDetailsThirdTypology}"
+                    >
+                        <div class="view-header flex justify-end p-5">
+                            <a
+                            href="javascript:void(0)"
+                            (click)="this.toggleThirdTypology()"
+                            >
+                                <img src="assets/svg/icons/mobile/close-menu.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="view-specifications p-5 flex flex-col gap-1 text-[13px]">
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Lote: 240 m2</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Área de construção: 149.25 m2</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>2 Quartos</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>1 Suite</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>2 Casas de banho</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Sala comum</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Cozinha  </p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Amplo Terraço</p>
+                                </div>
+                            </div>
+
+                            <div class="item flex items-center gap-4">
+                                <div class="icon w-[16px]">
+                                    <img src="assets/svg/icons/implantation/check.svg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p>Varandas</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- <div class="details-content flex justify-center items-center text-white">
+                        <a
+                        href="javascript:void(0)"
+                        (click)="this.toggleThirdTypology()"
+                        >
+                            <p class="flex gap-3">
+                                Ver detalhes
+                                <img src="assets/svg/icons/typologies/see-details-arrow.svg" alt="">
+                            </p>
+                        </a>
+                    </div> -->
+
+                    <img src="assets/images/typologies/t4b.jpg" alt="">
+                </div>
+                <div class="bottom-content mt-4 flex justify-between items-center">
+                    <div class="text-description">
+                        <p class="laptop:text-[16px] text-[#131418] uppercase font-semibold">
+                            Tipologia T4B
+                        </p>
+                    </div>
+                    <div class="details-content flex justify-center items-center text-white">
+                        <a
+                        href="javascript:void(0)"
+                        (click)="this.toggleThirdTypology()"
+                        >
+                            <p class="flex gap-3 text-[14px] text-secondary font-semibold">
+                                {{ this.detailsThirdDescription }}
+                                <img src="assets/svg/icons/typologies/see-details-arrow.svg" width="15px" alt="">
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

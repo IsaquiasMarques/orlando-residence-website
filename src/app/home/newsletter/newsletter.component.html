@@ -1,0 +1,55 @@
+<div class="section-contain p-7 laptop:p-20 flex flex-col justify-center items-center laptop:rounded-[4px] bg-secondary">
+    <div class="section-header">
+        <h1 class="text-[30px] laptop:text-[40px] font-semibold text-white">
+            Newsletter
+        </h1>
+    </div>
+    <div class="section-description text-center bg-green-2000 mt-2 mb-5 laptop:w-[30%]">
+        <p class="laptop:text-[16px] text-[#F0F0F0] opacity-[70%]">
+            Seja o primeiro a receber as novidades sobre as moradias
+        </p>
+    </div>
+
+    <div class="section-form">
+        <form
+        method="POST"
+        [formGroup]="this.formGroup"
+        (submit)="this.submitForm()"
+        >
+            <div class="email-input flex gap-0 laptop:gap-2 justify-between items-center">
+                <div class="icon w-5">
+                    <img src="assets/svg/icons/newsletter/email.svg" alt="">
+                </div>
+                <div class="input">
+                    <input type="email" formControlName="email" placeholder="comercial@broima.co.ao">
+                </div>
+            </div>
+            <p
+            class="text-white text-[14px] text-center mt-5"
+            *ngIf="this.emailSentStatusLabel !== ''"
+            >
+                {{ this.emailSentStatusLabel }}
+            </p>
+            <div class="submit-button mt-5">
+                <button
+                class="w-full bg-white text-secondary font-semibold rounded-[4px] p-[10px]"
+                [disabled]="this.formGroup.invalid"
+                >
+                    <div
+                    class="description flex justify-center gap-4 items-center"
+                    *ngIf="!this.isSendEmailLoading"
+                    
+                    >
+                        Subscrever
+                    </div>
+                    <div
+                    class="is-loading flex justify-center items-center transition-all"
+                    *ngIf="this.isSendEmailLoading"
+                    >
+                        <img src="assets/svg/icons/forms/rolling-loading-subscribe.svg" width="25px" alt="">
+                    </div>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

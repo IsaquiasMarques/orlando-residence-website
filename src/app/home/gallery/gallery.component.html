@@ -1,0 +1,84 @@
+<div class="section-title">
+    <h1 class="text-[#131418] text-center text-[30px] laptop:text-[40px] font-bold leading-[36px] laptop:leading-[46px]">
+        Galeria
+    </h1>
+</div>
+
+<div class="categories-nav my-10 w-[70%] mx-auto">
+    <div class="navigation bg-yellow-200">
+        <ul class="flex justify-around flex-col laptop:flex-row gap-2 laptop:gap-0 items-center bg-[#F0F0F0] rounded-[4px] py-4 px-2">
+
+            <div
+            class="item flex w-fit justify-around items-center gap-0"
+            >
+                <li>
+                    <a
+                    href="javascript:void(0)"
+                    [ngClass]="{'active': this.isShowingAll}"
+                    (click)="this.get_gallery_by_category('all')"
+                    >Todas</a>
+                </li>
+                <!-- <span class="text-[9px] hidden laptop:block">&#9679;</span> -->
+            </div>
+
+            <div
+            class="item bg-slate-4000 flex w-fit justify-around items-center gap-0"
+            *ngFor="let category of this.gallery_categories"
+            >
+                
+                <li class="">
+                    <a
+                    href="javascript:void(0)"
+                    class="bg-red-3000"
+                    [ngClass]="{'active': category.active}"
+                    (click)="this.get_gallery_by_category(category.name)"
+                    >{{ category.name }}</a>
+                </li>
+
+                <!-- <span class="text-[9px] hidden laptop:block">&#9679;</span> -->
+            </div>
+
+        </ul>
+    </div>
+</div>
+
+<div
+class="images-gallery mt-20 laptop:mt-32"
+>
+    
+    <div
+    class="boxes w-[90%] mx-auto flex flex-col laptop:flex-row gap-10 flex-wrap"
+    *ngIf="!(this.isLoading | async)"
+    [ngClass]="{'laptop:justify-center': this.displayGallery.length > 2 && (this.displayGallery.length % 3) == 0, 'laptop:justify-start':this.displayGallery.length < 3 || (this.displayGallery.length % 3) == 0, 'laptop:w-fit': this.displayGallery.length >= 3 }"
+    >
+        <div
+        class="box-img gallery w-full h-[300px] laptop:w-[380px] laptop:h-[380px]"
+        *ngFor="let gallery of this.displayGallery"
+        >
+            <img src="{{ this.gallery.image }}" alt="{{ this.gallery.title }}">
+        </div>
+        <div
+        class="show-more mt-1 laptop:mt-3 flex justify-center items-center w-full"
+        *ngIf="this.remainigGaleryImages > 0 && this.isShowingAll"
+        >
+            <button
+            class="ring-1 ring-secondary rounded-[4px] py-2 px-4 text-secondary"
+            (click)="this.seeMore()"
+            >
+                Ver mais
+            </button>
+        </div>
+    </div>
+
+    <div
+    class="boxes-skeleton w-[90%] mx-auto laptop:w-fit flex flex-col laptop:flex-row justify-center gap-10"
+    *ngIf="this.isLoading | async"
+    >
+        <div
+        class="box-img"
+        *ngFor="let gallery of [0, 1, 2]"
+        >
+        </div>
+    </div>
+
+</div>

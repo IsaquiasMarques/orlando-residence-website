@@ -1,0 +1,46 @@
+<div class="banner--image relative h-auto overflow-hidden">
+    <div class="banner-content-contain mx-auto w-[100%] max-w-[1536px]">
+        <div class="banner--content-panel w-full bg-white px-6 py-5">
+            <div class="content-panel">
+                <div class="panel-title">
+                    <h1 class="text-[38px] font-bold leading-[46px]">
+                        Realize agora o sonho da casa própria!
+                    </h1>
+                </div>
+                <div class="panel-description my-10">
+                    <p class="text-[#131418] text-[16px]">
+                        Temos os melhores imóveis com as melhores condições do mercado para você
+                    </p>
+                </div>
+                <div class="panel-footer">
+                    <div class="buttons">
+                        <div class="schedule-visit-btn">
+                            <app-schedule-visit></app-schedule-visit>
+                        </div>
+                        <div class="get-in-touch-btn mt-4">
+                            <button
+                            class="bg-white w-full p-3 text-[#131418] rounded-[4px] flex justify-center gap-4 items-center laptop:font-semibold"
+                            (click)="this.get_in_touch('tel:923267333')"
+                            >
+                                Entrar em contacto
+                                <img src="assets/svg/icons/banner/get-in-touch-icon.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide h-[258px]">
+        <div
+        class="images-list"
+        *ngFor="let image of this.imagesOnSlide"
+        [ngClass]="{'primary': image.primary, 'secondary': !image.primary}"
+        >
+            <img
+            src="{{ image.image }}"
+            alt="{{ image.title }}"
+            >
+        </div>
+    </div>
+</div>

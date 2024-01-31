@@ -1,0 +1,215 @@
+<header class="fixed top-0 bg-white left-0 w-full z-10">
+  <div class="header-contain w-[90%] laptop:w-[85%] mx-auto max-w-[1536px] laptop:px-0 py-0 flex justify-between items-center">
+    
+    <div class="logo">
+      <img src="assets/svg/logo/logo.svg" alt="">
+    </div>
+
+    <div class="menu-desktop hidden laptop:block">
+      <nav>
+        <ul class="flex gap-x-10">
+          <li><a href="javascript:void(0)" (click)="this.slideTo('banner')">Início</a></li>
+          <li><a href="javascript:void(0)" (click)="this.slideTo('about')">Sobre Nós</a></li>
+          <li><a href="javascript:void(0)" (click)="this.slideTo('gallery')">Galeria</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile-header-section laptop:hidden">
+      <div class="menu-icon">
+        <a
+        href="javascript:void(0)"
+        (click)="this.toggleMenuMobile()"
+        
+        >
+          <img src="assets/svg/icons/mobile/menu.svg" alt="">
+        </a>
+      </div>
+    </div>
+
+    <div
+    class="menu-mobile laptop:hidden fixed w-full h-full z-2 left-0 bg-white disappear"
+    [ngClass]="{'appear': this.hasMenuToShow, 'disappear': !this.hasMenuToShow}"
+    >
+      <div class="menu-mobile-header flex justify-between items-center p-5">
+
+        <div class="logo">
+          <img src="assets/svg/logo/logo.svg" alt="">
+        </div>
+
+        <div class="mobile-header-section laptop:hidden">
+          <div class="menu-icon">
+            <a
+            href="javascript:void(0)"
+            (click)="this.toggleMenuMobile()"
+            
+            >
+              <img src="assets/svg/icons/mobile/close-menu.svg" alt="">
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <nav>
+        <ul class="flex flex-col gap-y-10 h-full items-start justify-center w-[90%] mx-auto text-[22px] mt-10">
+          <li><a href="javascript:void(0)" (click)="this.slideTo('banner')">Início</a></li>
+          <li><a href="javascript:void(0)" (click)="this.slideTo('about')">Sobre Nós</a></li>
+          <li><a href="javascript:void(0)" (click)="this.slideTo('gallery')">Galeria</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+  </div>
+</header>
+
+<section class="content--body mt-16 max-w-[1536px] mx-auto">
+  <router-outlet></router-outlet>
+</section>
+
+<footer class="pt-20 bg-[#131418]">
+
+  <div class="content-top w-[90%] laptop:w-[85%] mx-auto max-w-[1536px] mb-20 flex flex-col gap-4 laptop:gap-0 laptop:flex-row justify-between">
+
+    <div class="get-in-touch bg-green-3009 flex flex-col laptop:flex-row gap-0">
+
+      <div class="contact-info bg-red-3009 w-full laptop:w-[45%]">
+  
+        <div class="info-title">
+          <h1 class="text-[24px] font-semibold mb-3 text-white">
+            Entre em contacto
+          </h1>
+        </div>
+        <div class="info-description">
+          <p class="laptop:text-[16px] text-[#F0F0F0] opacity-[70%] w-[90%]">
+            Em caso de dúvida, dispomos as nossas linhas de contacto.
+          </p>
+        </div>
+        <div class="info-contacts mt-5">
+  
+          <div class="line-1 flex justify-start items-center gap-7 mb-3">
+            <p
+            class="text-[14px] laptop:text-[16px] text-[#F0F0F0] cursor-pointer"
+            (click)="this.openLink('923267333')"
+            >
+              (+244) 923 267 333
+            </p>
+            <p
+            class="text-[14px] laptop:text-[16px] text-[#F0F0F0] cursor-pointer"
+            (click)="this.openLink('999238888')"
+            >
+              999 238 888
+            </p>
+          </div>
+  
+          <div class="line-2 flex justify-start items-center gap-7">
+            <p
+            class="text-[14px] laptop:text-[16px] text-[#F0F0F0] cursor-pointer"
+            (click)="this.openLink('999258888')"
+            >
+              (+244) 999 258 888
+            </p>
+            <p
+            class="text-[14px] laptop:text-[16px] text-[#F0F0F0] cursor-pointer"
+            (click)="this.openLink('999268888')"
+            >
+              999 268 888
+            </p>
+          </div>
+  
+        </div>
+  
+      </div>
+      
+      <div class="whatsapp flex flex-col justify-between my-5 laptop:my-0 laptop:items-center w-full laptop:w-[45%]">
+
+        <div class=""></div>
+        <div class=""></div>
+        <div class="whatsapp-button">
+          <div class="button">
+            <button
+            class="bg-[#00C556] text-white p-3 laptop:p-4 rounded-[4px] flex justify-start items-center gap-3"
+            (click)="this.openWhatsapp('+244913588888')"
+            >
+              <div class="contact text-[14px] laptop:text-[15px]">
+                WhatsApp (+244) 913 588 888
+              </div>
+              <div class="icon">
+                <img src="assets/svg/icons/footer/arrow-btn.svg" alt="">
+              </div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="social-media flex flex-col justify-between">
+
+      <div class=""></div>
+      <div class=""></div>
+      <div class="icons flex justify-between gap-12 items-center">
+
+        <div class="media flex gap-7 items-center justify-between">
+          <div class="icon">
+            <a
+            href="javascript:void(0)"
+            (click)="this.openSocialMedia('https://www.facebook.com/orlandoresidencial.ao')"
+            >
+              <img src="assets/svg/icons/footer/facebook-icon.svg" alt="">
+            </a>
+          </div>
+  
+          <div class="icon">
+            <a
+            href="javascript:void(0)"
+            (click)="this.openSocialMedia('https://www.instagram.com/orlandoresidencial.ao')"
+            >
+              <img src="assets/svg/icons/footer/instagram-icon.svg" alt="">
+            </a>
+          </div>
+  
+          <!-- <div class="icon">
+            <a
+            href="javascript:void(0)"
+            (click)="this.openSocialMedia('https://www.facebook.com/orlandoresidencial.ao')"
+            >
+              <img src="assets/svg/icons/footer/twitter-icon.svg" alt="">
+            </a>
+          </div> -->
+
+        </div>
+
+        <div class="go-to">
+          <div class="icon">
+            <a href="javascript:void(0)" (click)="this.slideTo('banner')">
+              <img src="assets/svg/icons/footer/go-to-top.svg" alt="">
+            </a>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+
+  </div>
+  
+  <div class="content-bottom bg-[#2D2E30] py-5 px-0">
+    <div class="content w-[90%] laptop:w-[85%] mx-auto max-w-[1536px] flex flex-col laptop:flex-row gap-5 laptop:gap-0 justify-between">
+
+      <div class="rights">
+        <p class="laptop:text-[14px] text-[#F0F0F0] opacity-[70%]">
+          &copy; 2023 Orlando Residencial. Todos os direitos reservados.
+        </p>
+      </div>
+
+      <div class="mail">
+        <p class="laptop:text-[14px] text-[#F0F0F0] opacity-[70%]">
+          comercial@broima.co.ao
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</footer>

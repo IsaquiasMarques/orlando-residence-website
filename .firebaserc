@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "orlando-residence": {
+      "hosting": {
+        "orlando-residence-website": [
+          "orlando-residence"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "orlando-residence"
+  }
+}
